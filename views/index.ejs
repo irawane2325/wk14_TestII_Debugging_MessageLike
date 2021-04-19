@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HEY</h1>
+    <h2>welcome to the site</h2>
+    <h3>the messaging site</h3>
+    <h4>make an account, login, post a message</h4>
+    <hr>
+        <a href="/createUser">Create an account</a> | 
+        <a href="/login">Login</a> | 
+        <a href="/message">post a message</a> | 
+    <hr>
+
+    <h2>Messages</h2>
+    <!-- MESSAGE- LIKE
+        * Insert a Like Button for each Message
+        * Automated counter for each message
+     -->
+   
+     
+    
+     <% for (let message of locals.messages) { %> 
+        <form action="/like" method="POST"></form>
+      
+         <button id="content" onclick="vote()"> 
+               
+                      <%= message.dataValues.content %>  
+                    <p></p>
+                    </button> 
+                     <% } %> 
+                     
+                        
+                    
+</form>
+
+
+
+
+</body>
+
+    <script>
+      
+      
+      var i =1;
+    function vote(){
+     
+        if(i != -1){
+            let para =  document.createElement('p');
+            para.id = i;
+            document.body.appendChild(para)
+            para.innerText = i.toString() + ' like';
+            i++;
+
+        }
+        else (
+            console.log('Try again')
+        )
+       
+      // let c =  document.getElementById('content')
+      // let p = document.getElementById('p').innerText= i.toString() + ' like';
+      
+     
+       
+    
+    }
+    
+   
+      
+    </script>
+
+<!-- MESSAGE Style -->
+<style>
+    
+    button{
+        width: fit-content;
+    }
+</style>
+
+
+</html>
